@@ -1,10 +1,11 @@
 import pandas
-data=pandas.read_csv("US-states/50_states.csv") 
+data=pandas.read_csv("50_states.csv") 
 all_states=data.state.to_list()
 import turtle
 screen =turtle.Screen()
 screen.title("U.S.States Game")
-image="US-states/blank_states_img.gif"
+
+image="blank_states_img.gif"
 screen.addshape(image)
 turtle.shape(image)
 guess=[]
@@ -17,7 +18,7 @@ while len(guess)<50:
         #         missing_states.append(state)
         #         #print(missing_states)
         new_data=pandas.DataFrame(missing_states)
-        new_data.to_csv("US-states/missing.csv")
+        new_data.to_csv("missing.csv")
         break
     if answer in all_states:
         guess.append(answer)
